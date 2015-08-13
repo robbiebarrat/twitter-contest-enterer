@@ -50,12 +50,20 @@ def search(twts):
     restart()
 
 def restart():
-    twts = api.search(q="RT to win")
+def restart():
+    # Added a very quick and terrible method for switching back and forth between "RT" and "retweet".
+    # Thanks for pointing this error out reddit user "aweusmeuh"
+    twtsone = api.search(q="RT to win")
+    twtstwo = api.search(q="retweet to win")
     time.sleep(20)
-    print "************************"
-    print "\n...Refreshing searched tweets...\n"
-    print "************************"
-    search(twts)
+    def alert():
+        print "************************"
+        print "\n...Refreshing searched tweets...\n"
+        print "************************"
+    search(twtsone)
+    alert()
+    search(twtstwo)
+    alert()
 
 print "Thank you for using my twitter contest-entering bot.\nConsider leaving a star if you like it."
 print "https://github.com/robbiebarrat/twitter-contest-enterer\n"
