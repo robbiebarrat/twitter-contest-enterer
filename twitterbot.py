@@ -30,17 +30,32 @@ def search(twts):
         if not any(k in i.text.lower() for k in keywords):
             continue
         # Retweets
-        api.retweet(i.id)
-        print "JUST RETWEETED " + (i.text)
+        try:
+            api.retweet(i.id)
+            print "JUST RETWEETED " + (i.text)
+        except:
+            print "Hm... Something went wrong.\nYou've probably already retweeted this."
         # Follows
         if "follow" in i.text or "Follow" in i.text or "FOLLOW" in i.text:
-            username = i.user.screen_name
-            api.create_friendship(username)
-            print "JUST FOLLOWED " + str(username)
-        # Favorites
+            # This part follows the actual contest-holder, instead of some random person who retweeted their contest
+            tweet = i.text
+            if tweet[0:3] == "RT ":
+                tweet = tweet[3:]
+            if tweet[0] == "@":
+                splittext = (tweet).split(":")
+                username = str(splittext[0]).replace("@", "")
+                api.create_friendship(username)
+                print "JUST FOLLOWED " + (username)
+            else:
+                username = i.user.screen_name
+                api.create_friendship(username)
+                print "JUST FOLLOWED " + str(username)
+
+        # This next part favorites tweets if it has to
         if "fav" in i.text or "Fav" in i.text or "FAV" in i.text:
             api.create_favorite(i.id)
             print "JUST FAVORITED " + (i.text)
+        # This part waits a minute before moving onto the next one.
         time.sleep(60)
 
 
