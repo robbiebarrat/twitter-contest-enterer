@@ -41,6 +41,7 @@ def search(twts):
         if "fav" in i.text.lower():
             api.create_favorite(i.id)
             print "JUST FAVORITED " + (i.text)
+        time.sleep(60)
 
 
 def run():
@@ -58,4 +59,3 @@ if __name__ == '__main__':
           "\nand only letting it run for a short time every day."
     while True:
         run()
-        time.sleep(60)
