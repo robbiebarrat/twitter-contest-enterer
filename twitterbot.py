@@ -33,12 +33,12 @@ def search(twts):
         api.retweet(i.id)
         print "JUST RETWEETED " + (i.text)
         # Follows
-        if "follow" in i.text.lower():
+        if "follow" in i.text or "Follow" in i.text or "FOLLOW" in i.text:
             username = i.user.screen_name
             api.create_friendship(username)
             print "JUST FOLLOWED " + str(username)
         # Favorites
-        if "fav" in i.text.lower():
+        if "fav" in i.text or "Fav" in i.text or "FAV" in i.text:
             api.create_favorite(i.id)
             print "JUST FAVORITED " + (i.text)
         time.sleep(60)
