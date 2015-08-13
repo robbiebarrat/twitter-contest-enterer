@@ -24,6 +24,9 @@ and the github repo for it is here:
 
     https://github.com/tweepy/tweepy
 
+Also -- you can get all the keys/tokens if you follow this guide.
+ 
+     https://www.digitalocean.com/community/tutorials/how-to-authenticate-a-python-application-with-twitter-using-tweepy-on-ubuntu-14-04
 
 # Terms of use
 Feel free to do whatever with it, but if you get in trouble with Twitter you'd better not get me in trouble too.
