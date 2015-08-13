@@ -50,7 +50,6 @@ def search(twts):
     restart()
 
 def restart():
-def restart():
     # Added a very quick and terrible method for switching back and forth between "RT" and "retweet".
     # Thanks for pointing this error out reddit user "aweusmeuh"
     twtsone = api.search(q="RT to win")
