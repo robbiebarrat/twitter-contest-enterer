@@ -24,10 +24,13 @@ keywords = [
     "rt for", "rt 4", "retweet to"
 ]
 
+bannedwords = [
+    "vote"
+]
 
 def search(twts):
     for i in twts:
-        if not any(k in i.text.lower() for k in keywords):
+        if not any(k in i.text.lower() for k in keywords) or any(k in i.text.lower() for k in bannedwords):
             continue
         # Retweets
         try:
