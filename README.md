@@ -31,6 +31,8 @@ Also -- you can get all the keys/tokens if you follow this guide.
 # Progress
 I just looked at the last 20 things it has retweeted, and it retweeted 18 'good' tweets, and only 2 'bad' ones. A 'good' tweet is one that is a "Retweet for a chance to win"-type tweet, while a 'bad' tweet is a tweet that isn't a contest. I'd say that 90% valid retweets is pretty great.
 
+You can check this for yourself; check out [@beefbot9000](https://twitter.com/beefbot9000)
+
 # Terms of use
 Feel free to do whatever with it, but if you get in trouble with Twitter you'd better not get me in trouble too.
 
