@@ -29,7 +29,7 @@ Also -- you can get all the keys/tokens if you follow this guide.
      https://www.digitalocean.com/community/tutorials/how-to-authenticate-a-python-application-with-twitter-using-tweepy-on-ubuntu-14-04
 
 # Progress
-I just looked at the last 20 things it has retweeted, and it retweeted 18 'good' tweets, and only 2 'bad' ones. A 'good' tweet is one that is a "Retweet for a chance to win"-type tweet, while a 'bad' tweet is a tweet that isn't a contest. I'd say that a good to bad tweet ratio of 18:2 is pretty great.
+I just looked at the last 20 things it has retweeted, and it retweeted 18 'good' tweets, and only 2 'bad' ones. A 'good' tweet is one that is a "Retweet for a chance to win"-type tweet, while a 'bad' tweet is a tweet that isn't a contest. I'd say that 90% valid retweets is pretty great.
 
 # Terms of use
 Feel free to do whatever with it, but if you get in trouble with Twitter you'd better not get me in trouble too.
