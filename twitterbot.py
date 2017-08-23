@@ -17,7 +17,7 @@ ACCESS_SECRET =  ''#keep the quotes, enter your access token secret
 
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
-api = tweepy.API(auth)
+api = tweepy.API(auth, wait_on_rate_limit=True,wait_on_rate_limit_notify=True)
 
 keywords = [
     "rt to", "rt and win", "retweet and win",
@@ -69,7 +69,7 @@ def search(twts):
             api.create_favorite(i.id)
             print "JUST FAVORITED " + (i.text)
         # This part waits a minute before moving onto the next one.
-        time.sleep(60)
+        time.sleep(45)
 
 
 def run():
