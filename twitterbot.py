@@ -35,18 +35,7 @@ def search(twts):
 
 			except Exception:
 				pass
-
-				
-		"""
-		else:
-			try:
-				username = i.user.screen_name
-				api.create_friendship(username)
-				print "follow " + str(username)
-			except Exception:
-				pass
-
-		"""
+			
 		if ("fav" in i.text or "Fav" in i.text or "FAV" in i.text) and not i.favorited:
 			try:
 				api.create_favorite(i.id)
