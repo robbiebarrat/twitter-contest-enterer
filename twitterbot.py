@@ -14,35 +14,42 @@ ACCESS_SECRET =  ''#keep the quotes, enter your access token secret
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth, wait_on_rate_limit=True,wait_on_rate_limit_notify=True)
-
 keywords = ["rt to", "rt and win", "retweet and win", "rt for", "rt 4", "retweet to"]
 
-bannedwords = ["vote"]
+bannedwords = ["vote", "bot", "b0t"]
+
+def is_user_bot_hunter(username):
+	clean_username = username.replace("0", "o")
+	clean_username = clean_username.lower()
+	if 'bot' in clean_username or 'spot' in clean_username:
+		return True
+	else:
+		return False
 
 def search(twts):
 	for i in twts:
 		if not any(k in i.text.lower() for k in keywords) or any(k in i.text.lower() for k in bannedwords):
 			continue
+		if is_user_bot_hunter(str(i.author.screen_name)) == False:
+			if not i.retweeted:
+				try:
+					api.retweet(i.id)
+					print "rt " + (i.text)
 
-		if not i.retweeted:
-			try:
-				api.retweet(i.id)
-				print "rt " + (i.text)
+					if "follow" in i.text or "Follow" in i.text or "FOLLOW" in i.text:
+						user_id = i.retweeted_status.user.id
+						api.create_friendship(user_id)
 
-				if "follow" in i.text or "Follow" in i.text or "FOLLOW" in i.text:
-					user_id = i.retweeted_status.user.id
-					api.create_friendship(user_id)
-
-			except Exception:
-				pass
+				except Exception:
+					pass
+				
+			if ("fav" in i.text or "Fav" in i.text or "FAV" in i.text) and not i.favorited:
+				try:
+					api.create_favorite(i.id)
+					print "fav " + (i.text)
+				except Exception:
+					pass
 			
-		if ("fav" in i.text or "Fav" in i.text or "FAV" in i.text) and not i.favorited:
-			try:
-				api.create_favorite(i.id)
-				print "fav " + (i.text)
-			except Exception:
-				pass
-		
 
 
 
@@ -55,3 +62,4 @@ def run():
 if __name__ == '__main__':
 	while True:
 		run()
+
