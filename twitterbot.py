@@ -18,13 +18,16 @@ keywords = ["rt to", "rt and win", "retweet and win", "rt for", "rt 4", "retweet
 
 bannedwords = ["vote", "bot", "b0t"]
 
+bannedusers = ['bot', 'spot', 'lvbroadcasting'] # does not need to be the entire username! you can just put 'bot' for names like 'b0tspotter', etc.
+
 def is_user_bot_hunter(username):
 	clean_username = username.replace("0", "o")
 	clean_username = clean_username.lower()
-	if 'bot' in clean_username or 'spot' in clean_username:
-		return True
-	else:
-		return False
+	for i in bannedusers:
+		if i in clean_username:
+			return True
+		else:
+			return False
 
 def search(twts):
 	for i in twts:
