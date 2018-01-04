@@ -20,21 +20,20 @@ bannedwords = ["vote", "bot", "b0t"]
 
 bannedusers = ['bot', 'spot', 'lvbroadcasting'] # does not need to be the entire username! you can just put 'bot' for names like 'b0tspotter', etc.
 
-def is_user_bot_hunter(username, screenname):
-	for name in [username, screenname]:
-		name = name.encode("ascii")
-		clean_username = name.replace("0", "o")
-		clean_username = name.lower()
-		for i in bannedusers:
-			if i in clean_username:
-				return True
-	return False
+def is_user_bot_hunter(username):
+	clean_username = username.replace("0", "o")
+	clean_username = clean_username.lower()
+	for i in bannedusers:
+		if i in clean_username:
+			return True
+		else:
+			return False
 
 def search(twts):
 	for i in twts:
 		if not any(k in i.text.lower() for k in keywords) or any(k in i.text.lower() for k in bannedwords):
 			continue
-		if is_user_bot_hunter(str(i.author.name), str(i.author.screen_name)) == False:
+		if is_user_bot_hunter(str(i.author.screen_name)) == False:
 			if not i.retweeted:
 				try:
 					api.retweet(i.id)
@@ -59,10 +58,10 @@ def search(twts):
 
 def run():
 	for key in ["RT to win", "retweet to win"]:
+		print "\nSearching again\n"
 		search(api.search(q=key))
-	print "\nSearching again\n"
+
 
 if __name__ == '__main__':
 	while True:
 		run()
-
