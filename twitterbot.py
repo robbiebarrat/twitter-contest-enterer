@@ -38,8 +38,9 @@ def search(twts):
 				try:
 					api.retweet(i.id)
 					print "rt " + (i.text)
-
-					if "follow" in i.text or "Follow" in i.text or "FOLLOW" in i.text:
+					
+					# huge thanks to github user andrewkerr5 for providing the fix for hashtags
+					if "follow" in i.text or "#follow" in i.text or "Follow" in i.text or "#Follow" in i.text or "FOLLOW" in i.text or "#FOLLOW" in i.text or "following" in i.text or "#following" in i.text or "FOLLOWING" in i.text or "#FOLLOWING" or "Following" in i.text or "#Following" in i.text:
 						user_id = i.retweeted_status.user.id
 						api.create_friendship(user_id)
 
