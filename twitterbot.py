@@ -19,7 +19,7 @@ keywords = ["rt to", "rt and win", "retweet and win", "rt for", "rt 4", "retweet
 
 bannedwords = ["vote", "bot", "b0t"]
 
-bannedusers = ['bot', 'spot', 'lvbroadcasting', 'jflessauSpam', 'bryster125', 'MobileTekReview', 'ilove70315673', 'followandrt2win'] # does not need to be the entire username! you can just put 'bot' for names like 'b0tspotter', etc.
+bannedusers = ['bot', 'spot', 'lvbroadcasting', 'jflessauSpam', 'bryster125', 'MobileTekReview', 'ilove70315673', 'followandrt2win', 'traunte', 'ericsonabby', '_aekkaphon'] # does not need to be the entire username! you can just put 'bot' for names like 'b0tspotter', etc.
 
 def is_user_bot_hunter(username):
 	clean_username = username.replace("0", "o")
