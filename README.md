@@ -1,6 +1,6 @@
 # twitter-contest-enterer
 Have you ever seen a tweet that looks like this?
-![alt tag](http://i.imgur.com/LDkU6hC.png)
+![alt tag](https://i.imgur.com/EiLd2wS.jpg)
 
 Chances are you have. This program (written entirely in python) finds and retweets these types of tweets. It also automatically favorites the tweet if the word "favorite"/"fav" is in it, and/or it will follow the user if the word "follow" is in the tweet.
 
