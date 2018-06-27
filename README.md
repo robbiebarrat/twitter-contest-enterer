@@ -15,19 +15,15 @@ Here is a picture of something it retweeted. It also followed this account (you 
 ![alt tag](http://i.imgur.com/F2DodMy.png)
 
 # Modules and code
-It's compatible with all versions, and the only modules it requires are 'time' (built-in) and tweepy
+It's compatible with all versions of Python, and the only modules it requires are 'time' (built-in) and tweepy.
 You can install Tweepy with
 
     pip install tweepy
 
-and the github repo for it is here:
+and the github repo for it is [here](https://github.com/tweepy/tweepy).
 
-    https://github.com/tweepy/tweepy
-
-Also -- you can get all the keys/tokens if you follow this guide.
+Also -- you can get all the keys/tokens if you follow [this](https://www.digitalocean.com/community/tutorials/how-to-authenticate-a-python-application-with-twitter-using-tweepy-on-ubuntu-14-04) guide.
  
-     https://www.digitalocean.com/community/tutorials/how-to-authenticate-a-python-application-with-twitter-using-tweepy-on-ubuntu-14-04
-
 # Progress
 I just looked at the last 20 things it has retweeted, and it retweeted 18 'good' tweets, and only 2 'bad' ones. A 'good' tweet is one that is a "Retweet for a chance to win"-type tweet, while a 'bad' tweet is a tweet that isn't a contest. I'd say that 90% valid retweets is pretty great.
 
