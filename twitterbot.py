@@ -2,8 +2,8 @@
 #  and won a bunch of stuff. I couldn't find the code that that guy used (I don't think he wanted to release it), so I
 # wrote this. Have fun.
 
-import tweepy, time, logging, inspect
 from __future__ import print_function
+import tweepy, time, logging, inspect
 logging.basicConfig(level=logging.INFO)
 
 #enter the corresponding information from your Twitter application:
