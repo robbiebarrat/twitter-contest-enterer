@@ -15,7 +15,7 @@ Here is a picture of something it retweeted. It also followed this account (you 
 ![alt tag](http://i.imgur.com/F2DodMy.png)
 
 # Modules and code
-It is all python 2.7 code, and the only modules it requires are 'time' (built-in) and 'Tweepy'
+It's compatible with all versions, and the only modules it requires are 'time' (built-in) and tweepy
 You can install Tweepy with
 
     pip install tweepy
