@@ -20,7 +20,7 @@ You can install Tweepy with
 
     pip install tweepy
 
-and the github repo for it is [here](https://github.com/tweepy/tweepy).
+The github repo for it is [here](https://github.com/tweepy/tweepy).
 
 Also -- you can get all the keys/tokens if you follow [this](https://www.digitalocean.com/community/tutorials/how-to-authenticate-a-python-application-with-twitter-using-tweepy-on-ubuntu-14-04) guide.
  
